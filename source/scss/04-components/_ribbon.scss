@@ -1,0 +1,38 @@
+.ribbon {
+	max-width: 100%;
+	overflow-x: hidden;
+	position: relative;
+  display: block;
+
+
+	&__wrapper {
+		animation: scroll-left ease-in-out 25s infinite alternate;
+		display: flex;
+		padding: 1rem 0;
+	}
+	&__text {
+		align-items: center;
+		display: flex;
+		flex: 1 0 320px;
+		text-transform: uppercase;
+
+		&::after {
+			$ribbon-icon-size: 24px;
+			background: no-repeat url("../../source/icons/others/ribbon-star.svg");
+			content: "";
+			display: inline-block;
+			height: $ribbon-icon-size;
+			margin-left: 1rem;
+			width: $ribbon-icon-size;
+		}
+	}
+}
+
+@keyframes scroll-left {
+  to {
+    transform: translateX(-700px);
+  }
+  from{
+    transform: translateX(0);
+  }
+}

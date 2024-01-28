@@ -1,0 +1,38 @@
+@use '../02-tools/grid' as *;
+@use '../01-settings/sizes' as s;
+@use '../02-tools/colors' as *;
+@use '../02-tools/_breakpoint.scss' as *;
+
+.l-about{
+  
+  .wrapper{
+    flex-direction: column;
+  }
+
+  .card-grid{
+    display: grid;
+    gap: s.$container-gap;
+    grid-template-columns: repeat(3, 1fr);
+
+    @include device(md){
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .card--x{
+    background: e-color(50);
+  }
+
+  .card--bg{
+    box-shadow: inset 382px 382px 0 rgba(0, 0, 0, .5), 0px 8px 16px 0px rgba(23, 0, 0, 0.32);;
+    grid-column: 2/ -1;
+    
+    @include device(md){
+      grid-column: 1;
+    }
+
+    h3 {
+      max-width: 382px;
+    }
+  }
+}
